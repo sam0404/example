@@ -1,7 +1,6 @@
 window.addEventListener('load', async () => {
   if ('serviceWorker' in navigator) {
     try {
-      alert("load")
       const reg = await navigator.serviceWorker.register('/sw.js')
       console.log('Service worker register success', reg)
     } catch (e) {
@@ -47,6 +46,7 @@ closeButton.addEventListener('click', () => {
 let installEvent = null;
 window.addEventListener('beforeinstallprompt', function (e) {
 
+  alert("load")
   modal.style.display = "block";
   e.preventDefault();
   installEvent = e;
