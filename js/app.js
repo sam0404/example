@@ -33,3 +33,31 @@ function toCard(post) {
     </div>
   `
 }
+
+let installButton = document.getElementById('install');
+let closeButton = document.getElementById('close')
+let modal = document.getElementById("modal");
+
+
+closeButton.addEventListener('click', () => {
+  modal.style.display = "none";
+})
+
+
+let installEvent = null;
+window.addEventListener('beforeinstallprompt', function (e) {
+
+  modal.style.display = "block";
+  e.preventDefault();
+  installEvent = e;
+});
+
+let installed = false;
+installButton.addEventListener('click', async function () {
+  modal.style.display = "none";
+  installEvent.prompt();
+  let result = await that.prompt.userChoice;
+  if (result && result.outcome === 'accepted') {
+    installed = true;
+  }
+})
