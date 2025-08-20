@@ -56,7 +56,7 @@ let installed = false;
 installButton.addEventListener('click', async function () {
   modal.style.display = "none";
   installEvent.prompt();
-  let result = await that.prompt.userChoice;
+  let result = await installEvent.prompt.userChoice;
   if (result && result.outcome === 'accepted') {
     installed = true;
   }
