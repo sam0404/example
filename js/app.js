@@ -53,11 +53,7 @@ window.addEventListener('beforeinstallprompt', function (e) {
 });
 
 let installed = false;
-installButton.addEventListener('click', async function () {
+installButton.addEventListener('click', async function (e) {
   modal.style.display = "none";
   installEvent.prompt();
-  let result = await installEvent.prompt.userChoice;
-  if (result && result.outcome === 'accepted') {
-    installed = true;
-  }
 })
