@@ -47,7 +47,7 @@ console.warn("isInstall ", isIntall)
 let installEvent = null;
 window.addEventListener('beforeinstallprompt', function (e) {
   if (isIntall) return
-  modal.style.display = "block";
+  modal.style.display = "flex";
   e.preventDefault();
   installEvent = e;
 });
