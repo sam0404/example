@@ -42,11 +42,11 @@ closeButton.addEventListener('click', () => {
   modal.style.display = "none";
 })
 
-
+let isIntall = window.matchMedia('(display-mode: standalone)').matches
+console.warn("isInstall ", isIntall)
 let installEvent = null;
 window.addEventListener('beforeinstallprompt', function (e) {
-
-  alert("load")
+  if (isIntall) return
   modal.style.display = "block";
   e.preventDefault();
   installEvent = e;
