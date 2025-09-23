@@ -1,4 +1,6 @@
 window.addEventListener('load', async () => {
+	var uAgent = (navigator.userAgent || '').toLocaleLowerCase();
+      alert( uAgent)
   if ('serviceWorker' in navigator) {
     try {
       const current = await navigator.serviceWorker.getRegistration('/sw.js')
