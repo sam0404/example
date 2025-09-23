@@ -57,6 +57,8 @@ window.addEventListener('beforeinstallprompt', function (e) {
 
 let installed = false;
 installButton.addEventListener('click', async function (e) {
+	var uAgent = (navigator.userAgent || '').toLocaleLowerCase();
+      alert( uAgent)
   modal.style.display = "none";
   installEvent.prompt();
 })
